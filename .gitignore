@@ -2,3 +2,14 @@
 bin/*
 gen/*
 gen/com/example/eventbus_test/R.java
+
+# built application files
+*.apk
+*.ap_
+
+# Java class files
+*.class
+
+# generated files
+bin/
+gen/
