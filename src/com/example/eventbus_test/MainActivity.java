@@ -2,6 +2,7 @@ package com.example.eventbus_test;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.view.Menu;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
@@ -13,8 +14,15 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		
+		
+		
+		Proxy.progress = ProgressDialog.show(this, "Waiting 3 seconds before adding item",
+			    "dialog message", true);
+		
+		
 		ListView listView1 = (ListView)findViewById(R.id.listView1);
-		listView1.setAdapter(new ArrayAdapter<String>(this, R.layout.row_item, Proxy.items));
+		listView1.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, Proxy.items));
+		Proxy.load();
 	}
 
 	@Override
