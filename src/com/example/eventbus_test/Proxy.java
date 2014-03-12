@@ -3,6 +3,8 @@ package com.example.eventbus_test;
 import java.util.ArrayList;
 import java.util.List;
 
+import de.greenrobot.event.EventBus;
+
 import android.app.ProgressDialog;
 import android.os.CountDownTimer;
 import android.provider.Telephony.Mms.Addr;
@@ -22,6 +24,7 @@ public class Proxy {
 		     public void onFinish() {
 		    	 items.add("b");
 		    	 Proxy.progress.dismiss();
+		    	 EventBus.getDefault().post(new AlphaListUpdateEvent());
 		     }
 		  }.start();
 	}

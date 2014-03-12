@@ -1,3 +1,4 @@
 *.class
 bin/*
 gen/*
+gen/com/example/eventbus_test/R.java
